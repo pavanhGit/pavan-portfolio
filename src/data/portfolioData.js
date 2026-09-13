@@ -5,7 +5,7 @@ export const personalInfo = {
   name: "Pavan H",
   title: "Java Backend Developer / Software Engineer",
   heroSubtitle: "Specializing in Resilient Microservices, High-Throughput REST APIs & Cloud Architecture",
-  email: "pavan.h.dev@gmail.com",
+  email: "officialpavanh@gmail.com",
   location: "India",
   github: "https://github.com/pavan-h",
   linkedin: "https://linkedin.com/in/pavan-h",
