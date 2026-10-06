@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldCheck, ArrowRight, FileText, Server, Database, Cpu, Terminal, CheckCircle2 } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './BrandIcons';
+import { GithubIcon, LinkedinIcon, InstagramIcon } from './BrandIcons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function HeroSection({ onToggleMode, theme }) {
@@ -117,7 +117,7 @@ export default function HeroSection({ onToggleMode, theme }) {
 
             {/* Social & Resume Links */}
             <div
-              className={`flex items-center space-x-6 pt-4 text-xs ${
+              className={`flex flex-wrap items-center gap-6 pt-4 text-xs ${
                 isLight ? 'text-slate-600' : 'text-slate-400'
               }`}
             >
@@ -138,6 +138,15 @@ export default function HeroSection({ onToggleMode, theme }) {
               >
                 <LinkedinIcon className="w-4 h-4" />
                 <span>LinkedIn</span>
+              </a>
+              <a
+                href={personalInfo.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-pink-500 transition-colors"
+              >
+                <InstagramIcon className="w-4 h-4 text-pink-500" />
+                <span>Instagram</span>
               </a>
               <a
                 href={personalInfo.email ? `mailto:${personalInfo.email}` : '#contact'}

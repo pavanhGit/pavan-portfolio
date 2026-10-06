@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, FileText, Send, Check, Copy, Terminal, ShieldCheck } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './BrandIcons';
+import { GithubIcon, LinkedinIcon, InstagramIcon } from './BrandIcons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function ContactSection({ theme }) {
@@ -125,7 +125,24 @@ export default function ContactSection({ theme }) {
                   <GithubIcon className="w-5 h-5 text-sky-600 dark:text-sky-400" />
                   <span className="text-sm font-semibold">Explore Repositories on GitHub</span>
                 </div>
-                <span className="text-xs font-mono text-slate-500 group-hover:text-sky-600 dark:group-hover:text-sky-400">github.com/pavan-h →</span>
+                <span className="text-xs font-mono text-slate-500 group-hover:text-sky-600 dark:group-hover:text-sky-400">github.com/pavanhGit →</span>
+              </a>
+
+              <a
+                href={personalInfo.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`p-4 rounded-xl border flex items-center justify-between transition-all group ${
+                  isLight
+                    ? 'bg-white border-slate-200 hover:border-pink-400 text-slate-700 hover:text-slate-900 shadow-sm'
+                    : 'bg-slate-900/60 border-slate-800/80 hover:border-pink-500/40 text-slate-300 hover:text-white'
+                }`}
+              >
+                <div className="flex items-center space-x-3">
+                  <InstagramIcon className="w-5 h-5 text-pink-500" />
+                  <span className="text-sm font-semibold">Follow on Instagram</span>
+                </div>
+                <span className="text-xs font-mono text-slate-500 group-hover:text-pink-500">instagram.com/pavan._.h/ →</span>
               </a>
             </div>
 

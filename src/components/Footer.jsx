@@ -1,6 +1,6 @@
 import React from 'react';
-import { Terminal, Mail, Heart, Sparkles } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './BrandIcons';
+import { Terminal, Mail, Sparkles } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, InstagramIcon } from './BrandIcons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Footer({ isAdventureMode, onToggleMode, theme }) {
@@ -111,6 +111,19 @@ export default function Footer({ isAdventureMode, onToggleMode, theme }) {
                 title="LinkedIn"
               >
                 <LinkedinIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={personalInfo.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`p-2 rounded-lg border transition-colors ${
+                  isLight && !isAdventureMode
+                    ? 'bg-white text-pink-600 hover:text-pink-700 hover:bg-slate-200 border-slate-300'
+                    : 'bg-slate-900 text-pink-400 hover:text-pink-300 hover:bg-slate-800 border-slate-800'
+                }`}
+                title="Instagram"
+              >
+                <InstagramIcon className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
