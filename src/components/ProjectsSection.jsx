@@ -3,9 +3,10 @@ import { ExternalLink, ShieldCheck, Terminal, Layers, ArrowUpRight, X, AlertTria
 import { GithubIcon } from './BrandIcons';
 import { projectsData } from '../data/portfolioData';
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ theme }) {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeFilter, setActiveFilter] = useState('All');
+  const isLight = theme === 'light';
 
   const categories = ['All', 'Microservices / FinTech', 'Distributed Systems', 'Security & Auth', 'FinTech & Systems'];
 
@@ -20,14 +21,22 @@ export default function ProjectsSection() {
         
         {/* Header */}
         <div className="text-left space-y-2 mb-12">
-          <div className="inline-flex items-center space-x-2 text-sky-400 text-xs font-mono tracking-wider uppercase">
+          <div
+            className={`inline-flex items-center space-x-2 text-xs font-mono tracking-wider uppercase ${
+              isLight ? 'text-sky-600' : 'text-sky-400'
+            }`}
+          >
             <Terminal className="w-4 h-4" />
             <span>04. Engineering Portfolio</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          <h2
+            className={`text-3xl sm:text-4xl font-bold tracking-tight ${
+              isLight ? 'text-slate-900' : 'text-white'
+            }`}
+          >
             Backend Systems & Architecture Projects
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
+          <p className={isLight ? 'text-slate-600 text-sm sm:text-base max-w-2xl' : 'text-slate-400 text-sm sm:text-base max-w-2xl'}>
             Real-world backend case studies focusing on high-concurrency APIs, microservice resilience, event streaming, and transactional integrity.
           </p>
 
@@ -40,6 +49,8 @@ export default function ProjectsSection() {
                 className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   activeFilter === cat
                     ? 'bg-sky-500 text-slate-950 shadow-md shadow-sky-500/20'
+                    : isLight
+                    ? 'bg-slate-200 text-slate-700 border border-slate-300 hover:text-slate-900 hover:border-slate-400'
                     : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-white hover:border-slate-700'
                 }`}
               >
@@ -54,44 +65,76 @@ export default function ProjectsSection() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group relative rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-sky-500/40 transition-all duration-300 p-6 md:p-8 flex flex-col justify-between shadow-xl"
+              className={`group relative rounded-2xl border transition-all duration-300 p-6 md:p-8 flex flex-col justify-between ${
+                isLight
+                  ? 'bg-white border-slate-200 hover:border-sky-400 shadow-sm'
+                  : 'bg-slate-900/70 border-slate-800/80 hover:border-sky-500/40 shadow-xl'
+              }`}
             >
               <div>
                 {/* Category & Status */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono px-3 py-1 rounded-full bg-slate-950 text-sky-300 border border-slate-800">
+                  <span
+                    className={`text-xs font-mono px-3 py-1 rounded-full border ${
+                      isLight
+                        ? 'bg-slate-100 text-sky-700 border-slate-200'
+                        : 'bg-slate-950 text-sky-300 border-slate-800'
+                    }`}
+                  >
                     {project.category}
                   </span>
                   {project.featured && (
-                    <span className="text-[10px] code-font px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30">
+                    <span
+                      className={`text-[10px] code-font px-2 py-0.5 rounded border ${
+                        isLight
+                          ? 'bg-amber-100 text-amber-800 border-amber-200'
+                          : 'bg-amber-500/10 text-amber-300 border-amber-500/30'
+                      }`}
+                    >
                       Featured Architecture
                     </span>
                   )}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white group-hover:text-sky-300 transition-colors mb-3">
+                <h3
+                  className={`text-xl font-bold transition-colors mb-3 ${
+                    isLight
+                      ? 'text-slate-900 group-hover:text-sky-600'
+                      : 'text-white group-hover:text-sky-300'
+                  }`}
+                >
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                <p className={`text-sm leading-relaxed mb-4 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
                   {project.description}
                 </p>
 
                 {/* Problem & Solution Quick Grid */}
-                <div className="space-y-3 bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 mb-6">
+                <div
+                  className={`space-y-3 p-4 rounded-xl border mb-6 ${
+                    isLight
+                      ? 'bg-slate-50 border-slate-200'
+                      : 'bg-slate-950/60 border-slate-800/80'
+                  }`}
+                >
                   <div>
-                    <span className="text-[11px] font-mono uppercase text-amber-400 block font-semibold">
+                    <span className="text-[11px] font-mono uppercase text-amber-600 dark:text-amber-400 block font-semibold">
                       Problem Solved:
                     </span>
-                    <p className="text-xs text-slate-300 mt-0.5">{project.problem}</p>
+                    <p className={`text-xs mt-0.5 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                      {project.problem}
+                    </p>
                   </div>
                   <div>
-                    <span className="text-[11px] font-mono uppercase text-sky-400 block font-semibold">
+                    <span className="text-[11px] font-mono uppercase text-sky-600 dark:text-sky-400 block font-semibold">
                       Architectural Approach:
                     </span>
-                    <p className="text-xs text-slate-300 mt-0.5">{project.solution}</p>
+                    <p className={`text-xs mt-0.5 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                      {project.solution}
+                    </p>
                   </div>
                 </div>
 
@@ -100,7 +143,11 @@ export default function ProjectsSection() {
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 rounded text-[11px] code-font bg-slate-800/80 text-slate-300 border border-slate-700/60"
+                      className={`px-2.5 py-1 rounded text-[11px] code-font border ${
+                        isLight
+                          ? 'bg-slate-100 text-slate-700 border-slate-200'
+                          : 'bg-slate-800/80 text-slate-300 border-slate-700/60'
+                      }`}
                     >
                       {tech}
                     </span>
@@ -109,10 +156,14 @@ export default function ProjectsSection() {
               </div>
 
               {/* Actions Footer */}
-              <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <div
+                className={`pt-4 border-t flex items-center justify-between ${
+                  isLight ? 'border-slate-200' : 'border-slate-800/80'
+                }`}
+              >
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="text-xs font-semibold text-sky-400 hover:text-sky-300 flex items-center space-x-1 cursor-pointer"
+                  className="text-xs font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-500 flex items-center space-x-1 cursor-pointer"
                 >
                   <span>Deep-Dive Architecture</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -124,7 +175,7 @@ export default function ProjectsSection() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-white transition-colors"
+                      className="hover:text-sky-600 dark:hover:text-white transition-colors"
                       title="View GitHub Repository"
                     >
                       <GithubIcon className="w-4 h-4" />
@@ -139,61 +190,75 @@ export default function ProjectsSection() {
         {/* Modal Detail View */}
         {selectedProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
-            <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-700 rounded-2xl p-6 md:p-8 text-left shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+            <div
+              className={`relative w-full max-w-2xl border rounded-2xl p-6 md:p-8 text-left shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto ${
+                isLight
+                  ? 'bg-white border-slate-300 text-slate-900'
+                  : 'bg-slate-900 border-slate-700 text-white'
+              }`}
+            >
               
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white rounded-lg bg-slate-800"
+                className={`absolute top-4 right-4 p-2 rounded-lg ${
+                  isLight
+                    ? 'text-slate-500 hover:text-slate-900 bg-slate-100'
+                    : 'text-slate-400 hover:text-white bg-slate-800'
+                }`}
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div>
-                <span className="text-xs font-mono text-sky-400 uppercase tracking-wider">
+                <span className="text-xs font-mono text-sky-600 dark:text-sky-400 uppercase tracking-wider">
                   {selectedProject.category}
                 </span>
-                <h3 className="text-2xl font-bold text-white mt-1">
+                <h3 className={`text-2xl font-bold mt-1 ${isLight ? 'text-slate-900' : 'text-white'}`}>
                   {selectedProject.title}
                 </h3>
               </div>
 
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-xs font-mono uppercase text-slate-400 font-semibold mb-1">
+                  <h4 className={`text-xs font-mono uppercase font-semibold mb-1 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
                     System Architecture Overview
                   </h4>
-                  <p className="text-sm text-slate-300 leading-relaxed">
+                  <p className={`text-sm leading-relaxed ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
                     {selectedProject.description}
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+                <div
+                  className={`p-4 rounded-xl border space-y-3 ${
+                    isLight ? 'bg-slate-50 border-slate-200' : 'bg-slate-950 border-slate-800'
+                  }`}
+                >
                   <div>
-                    <h5 className="text-xs font-mono uppercase text-amber-400 font-bold">
+                    <h5 className="text-xs font-mono uppercase text-amber-600 dark:text-amber-400 font-bold">
                       Business & Technical Problem:
                     </h5>
-                    <p className="text-xs text-slate-300 mt-1">
+                    <p className={`text-xs mt-1 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
                       {selectedProject.problem}
                     </p>
                   </div>
                   <div>
-                    <h5 className="text-xs font-mono uppercase text-sky-400 font-bold">
+                    <h5 className="text-xs font-mono uppercase text-sky-600 dark:text-sky-400 font-bold">
                       Engineering Solution:
                     </h5>
-                    <p className="text-xs text-slate-300 mt-1">
+                    <p className={`text-xs mt-1 ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
                       {selectedProject.solution}
                     </p>
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-mono uppercase text-slate-400 font-semibold mb-2">
+                  <h4 className={`text-xs font-mono uppercase font-semibold mb-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
                     Key Engineering Challenges Overcome
                   </h4>
                   <ul className="space-y-2">
                     {selectedProject.keyChallenges.map((challenge, i) => (
-                      <li key={i} className="flex items-start space-x-2 text-xs text-slate-300">
-                        <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                      <li key={i} className={`flex items-start space-x-2 text-xs ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                        <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
                         <span>{challenge}</span>
                       </li>
                     ))}
@@ -201,12 +266,19 @@ export default function ProjectsSection() {
                 </div>
 
                 <div>
-                  <h4 className="text-xs font-mono uppercase text-slate-400 font-semibold mb-2">
+                  <h4 className={`text-xs font-mono uppercase font-semibold mb-2 ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
                     Technologies & Tools Used
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
                     {selectedProject.techStack.map((tech) => (
-                      <span key={tech} className="px-2.5 py-1 text-xs code-font rounded bg-slate-800 text-sky-300">
+                      <span
+                        key={tech}
+                        className={`px-2.5 py-1 text-xs code-font rounded border ${
+                          isLight
+                            ? 'bg-slate-100 text-sky-800 border-slate-200'
+                            : 'bg-slate-800 text-sky-300 border-slate-700'
+                        }`}
+                      >
                         {tech}
                       </span>
                     ))}
@@ -214,7 +286,7 @@ export default function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex justify-between items-center">
+              <div className={`pt-4 border-t flex justify-between items-center ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
                 {selectedProject.githubUrl && (
                   <a
                     href={selectedProject.githubUrl}
@@ -228,7 +300,11 @@ export default function ProjectsSection() {
                 )}
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold cursor-pointer"
+                  className={`px-4 py-2 rounded-lg text-xs font-semibold cursor-pointer ${
+                    isLight
+                      ? 'bg-slate-200 hover:bg-slate-300 text-slate-800'
+                      : 'bg-slate-800 hover:bg-slate-700 text-slate-300'
+                  }`}
                 >
                   Close Window
                 </button>
