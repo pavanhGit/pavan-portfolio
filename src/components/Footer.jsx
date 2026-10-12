@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, Mail, Sparkles } from 'lucide-react';
+import { Terminal, Mail, Phone, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from './BrandIcons';
 import { personalInfo } from '../data/portfolioData';
 
