@@ -3,7 +3,7 @@ import { ShieldCheck, ArrowRight, FileText, Server, Database, Cpu, Terminal, Che
 import { GithubIcon, LinkedinIcon, InstagramIcon } from './BrandIcons';
 import { personalInfo } from '../data/portfolioData';
 
-export default function HeroSection({ onToggleMode, theme }) {
+export default function HeroSection({ theme }) {
   const isLight = theme === 'light';
 
   return (
@@ -106,13 +106,6 @@ export default function HeroSection({ onToggleMode, theme }) {
               >
                 <span>Contact Me</span>
               </a>
-
-              <button
-                onClick={onToggleMode}
-                className="px-4 py-3 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-300 hover:text-amber-700 text-xs font-bold flex items-center space-x-1.5 transition-all hover:border-amber-400/60 cursor-pointer"
-              >
-                <span>Beyond the Code →</span>
-              </button>
             </div>
 
             {/* Social & Resume Links */}
