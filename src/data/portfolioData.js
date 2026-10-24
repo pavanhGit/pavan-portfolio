@@ -32,64 +32,28 @@ export const aboutData = {
   ]
 };
 
-export const skillsData = [
-  {
-    category: "Backend Development",
-    icon: "Server",
-    skills: [
-      { name: "Core Java & Java 8+", level: "Production", desc: "OOP, Concurrency, Multithreading, Streams API, Collections, JVM Memory" },
-      { name: "Spring Boot", level: "Production", desc: "Microservices, Auto-configuration, Actuator, Profiles, Application properties" },
-      { name: "Spring MVC & RESTful APIs", level: "Production", desc: "REST Controller design, Request mapping, Exception handling, Interceptors" },
-      { name: "Spring Data JPA & Hibernate", level: "Production", desc: "Entity mappings, Criteria queries, Transaction management, Lazy loading" },
-    ],
-  },
-  {
-    category: "Banking & Enterprise",
-    icon: "ShieldCheck",
-    skills: [
-      { name: "TCS BaNCS", level: "Specialized", desc: "Core banking platform architecture, modules configuration & enterprise integration" },
-      { name: "Account & Transaction Processing", level: "Specialized", desc: "Account lifecycle, debit/credit processing, ledger validation, financial integrity" },
-      { name: "Financial Reconciliation & Batch", level: "Production", desc: "End-of-day batch processing, transaction reconciliation, reporting workflows" },
-      { name: "Production Support & Troubleshooting", level: "Production", desc: "Root cause analysis (RCA), log diagnostics (Log4j/Logback), defect triage" },
-    ],
-  },
-  {
-    category: "Messaging & Event Processing",
-    icon: "Cpu",
-    skills: [
-      { name: "Apache Kafka", level: "Production", desc: "Producers, Consumers, Event streams, Consumer groups, Topic partitioning" },
-      { name: "Event-Driven Architecture", level: "Production", desc: "Asynchronous processing, Inter-service decoupled communication" },
-      { name: "Redis Caching", level: "Production", desc: "In-memory caching, low-latency API acceleration, session management" },
-    ],
-  },
-  {
-    category: "Database & Data Processing",
-    icon: "Database",
-    skills: [
-      { name: "SQL & Query Optimization", level: "Production", desc: "Complex joins, Execution plan analysis, Performance tuning, Subqueries" },
-      { name: "Database Indexing & JDBC", level: "Production", desc: "B-Tree indexes, Composite indexing, Connection pooling, PreparedStatements" },
-      { name: "MySQL, Oracle & DB2", level: "Production", desc: "Enterprise relational database schemas, ACID compliance, Transactions" },
-    ],
-  },
-  {
-    category: "Cloud, DevOps & Linux",
-    icon: "Cloud",
-    skills: [
-      { name: "AWS Cloud (EC2, S3, RDS)", level: "Practical", desc: "Virtual instances, cloud storage, managed relational database services" },
-      { name: "Docker Containerization", level: "Production", desc: "Dockerfiles, Image builds, Containerized microservice deployments" },
-      { name: "Jenkins & CI/CD Pipelines", level: "Production", desc: "Automated build, test verification, and deployment pipelines" },
-      { name: "Linux & Build Tools", level: "Production", desc: "Shell navigation, Bash scripting, Maven, Git, GitHub workflow" },
-    ],
-  },
-  {
-    category: "API, Testing & Practices",
-    icon: "CheckCircle",
-    skills: [
-      { name: "REST API Integration & OpenAPI", level: "Production", desc: "Swagger, OpenAPI spec, Postman, JSON/XML contract handling" },
-      { name: "JUnit & Mockito", level: "Production", desc: "Automated unit testing, mock injection, regression suites, SonarQube quality" },
-      { name: "Agile & Software Engineering", level: "Production", desc: "Scrum, Sprint planning, SOLID principles, Design patterns, JIRA" },
-    ],
-  },
+export const skillsList = [
+  { name: "Java", category: "Backend" },
+  { name: "Spring Boot", category: "Backend" },
+  { name: "Spring Data JPA / Hibernate", category: "Backend" },
+  { name: "Microservices Architecture", category: "Architecture" },
+  { name: "RESTful Web Services", category: "Backend" },
+  { name: "MySQL & SQL", category: "Database" },
+  { name: "Apache Kafka", category: "Messaging" },
+  { name: "Docker", category: "DevOps" },
+  { name: "AWS (EC2, S3, RDS)", category: "Cloud" },
+  { name: "JUnit & Mockito", category: "Testing" },
+  { name: "Git & GitHub", category: "Tools" },
+  { name: "Maven", category: "Tools" },
+  { name: "REST API Design & Integration", category: "Backend" },
+  { name: "Design Patterns & SOLID Principles", category: "Architecture" },
+  { name: "Agile / Scrum", category: "Practices" },
+  { name: "Jenkins & CI/CD Pipelines", category: "DevOps" },
+  { name: "Redis", category: "Database" },
+  { name: "Linux", category: "DevOps" },
+  { name: "Postman & OpenAPI", category: "Tools" },
+  { name: "SonarQube", category: "Testing" },
+  { name: "JIRA & Confluence", category: "Tools" },
 ];
 
 export const workExperienceData = [

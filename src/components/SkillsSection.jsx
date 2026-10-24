@@ -1,146 +1,155 @@
 import React, { useState } from 'react';
-import { Server, Database, Cpu, Cloud, CheckCircle, Terminal, ShieldCheck, Layers, GitBranch } from 'lucide-react';
-import { skillsData } from '../data/portfolioData';
+import {
+  Code2,
+  Zap,
+  Database,
+  Network,
+  Globe,
+  Radio,
+  Box,
+  Cloud,
+  CheckCircle2,
+  GitBranch,
+  Package,
+  Server,
+  Shield,
+  RotateCw,
+  PlayCircle,
+  Flame,
+  Terminal,
+  FileCode,
+  ShieldCheck,
+  CheckSquare,
+} from 'lucide-react';
+import { skillsList } from '../data/portfolioData';
 
 export default function SkillsSection({ theme }) {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [selectedFilter, setSelectedFilter] = useState('All');
   const isLight = theme === 'light';
 
-  const categoryIcons = {
-    'Backend Development': Server,
-    'Banking & Enterprise': ShieldCheck,
-    'Messaging & Event Processing': Cpu,
-    'Database & Data Processing': Database,
-    'Cloud, DevOps & Linux': Cloud,
-    'API, Testing & Practices': CheckCircle,
+  // Map each skill to an appropriate modern icon
+  const skillIcons = {
+    'Java': Code2,
+    'Spring Boot': Zap,
+    'Spring Data JPA / Hibernate': Database,
+    'Microservices Architecture': Network,
+    'RESTful Web Services': Globe,
+    'MySQL & SQL': Database,
+    'Apache Kafka': Radio,
+    'Docker': Box,
+    'AWS (EC2, S3, RDS)': Cloud,
+    'JUnit & Mockito': CheckCircle2,
+    'Git & GitHub': GitBranch,
+    'Maven': Package,
+    'REST API Design & Integration': Server,
+    'Design Patterns & SOLID Principles': Shield,
+    'Agile / Scrum': RotateCw,
+    'Jenkins & CI/CD Pipelines': PlayCircle,
+    'Redis': Flame,
+    'Linux': Terminal,
+    'Postman & OpenAPI': FileCode,
+    'SonarQube': ShieldCheck,
+    'JIRA & Confluence': CheckSquare,
   };
 
-  const categories = ['All', ...skillsData.map((s) => s.category)];
+  const filterTabs = ['All', 'Backend', 'Architecture', 'Database', 'Messaging', 'DevOps', 'Cloud', 'Testing', 'Tools'];
 
-  const filteredData =
-    activeCategory === 'All'
-      ? skillsData
-      : skillsData.filter((s) => s.category === activeCategory);
+  const filteredSkills = selectedFilter === 'All'
+    ? skillsList
+    : skillsList.filter((s) => s.category.toLowerCase() === selectedFilter.toLowerCase());
 
   return (
-    <section id="skills" className="py-28 md:py-36 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-16 md:py-20 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
-        <div className="text-left space-y-3 mb-14">
+        {/* Compact Centered Header */}
+        <div className="text-center max-w-2xl mx-auto space-y-2.5 mb-8">
           <div
             className={`inline-flex items-center space-x-2 text-xs font-mono tracking-wider uppercase ${
               isLight ? 'text-sky-600' : 'text-sky-400'
             }`}
           >
             <Terminal className="w-4 h-4" />
-            <span>02. Technical Competencies</span>
+            <span>02. Skills & Technologies</span>
           </div>
           <h2
-            className={`text-4xl sm:text-5xl font-extrabold tracking-tight ${
+            className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
               isLight ? 'text-slate-900' : 'text-white'
             }`}
           >
-            Skills & Technology Stack
+            Core Technology Stack
           </h2>
-          <p className={isLight ? 'text-slate-600 text-base sm:text-lg max-w-2xl font-light' : 'text-slate-400 text-base sm:text-lg max-w-2xl font-light'}>
-            Key high-weightage competencies and enterprise tools I use to build robust, scalable backend systems.
+          <p className={isLight ? 'text-slate-600 text-sm sm:text-base font-light' : 'text-slate-400 text-sm sm:text-base font-light'}>
+            Key technologies, frameworks, and engineering tools I work with daily.
           </p>
+        </div>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap gap-2.5 pt-6">
-            {categories.map((cat) => (
+        {/* Compact Interactive Tiles Container */}
+        <div
+          className={`p-6 sm:p-8 md:p-10 rounded-3xl border transition-all duration-300 ${
+            isLight
+              ? 'bg-white border-slate-200/90 shadow-sm'
+              : 'bg-slate-900/60 border-slate-800/80 shadow-2xl'
+          }`}
+        >
+          {/* Quick Filter Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-1.5 mb-8">
+            {filterTabs.map((tab) => (
               <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
-                  activeCategory === cat
-                    ? 'bg-sky-500 text-slate-950 shadow-lg shadow-sky-500/25 scale-[1.02]'
+                key={tab}
+                onClick={() => setSelectedFilter(tab)}
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer ${
+                  selectedFilter === tab
+                    ? 'bg-sky-500 text-slate-950 font-bold shadow-md shadow-sky-500/20'
                     : isLight
-                    ? 'bg-slate-100 text-slate-700 border border-slate-300 hover:text-slate-900 hover:border-slate-400'
-                    : 'bg-slate-900/80 text-slate-300 border border-slate-800 hover:text-white hover:border-slate-700'
+                    ? 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
+                    : 'bg-slate-800/60 text-slate-400 hover:bg-slate-800 hover:text-white'
                 }`}
               >
-                {cat}
+                {tab}
               </button>
             ))}
           </div>
-        </div>
 
-        {/* Skills Category Grid - Spacious 2-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 text-left">
-          {filteredData.map((group) => {
-            const IconComponent = categoryIcons[group.category] || Server;
-            return (
-              <div
-                key={group.category}
-                className={`p-8 md:p-10 rounded-3xl border transition-all duration-300 flex flex-col justify-between ${
-                  isLight
-                    ? 'bg-white border-slate-200/90 hover:border-sky-300 shadow-sm'
-                    : 'bg-slate-900/60 border-slate-800/80 hover:border-sky-500/30 shadow-xl'
-                }`}
-              >
-                <div>
-                  {/* Category Header */}
+          {/* Compressed Small Tiles Grid */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {filteredSkills.map((skill) => {
+              const IconComponent = skillIcons[skill.name] || Code2;
+              return (
+                <div
+                  key={skill.name}
+                  className={`group flex items-center space-x-2.5 px-4 py-2.5 rounded-2xl border transition-all duration-200 hover:scale-[1.04] cursor-default ${
+                    isLight
+                      ? 'bg-slate-50/90 border-slate-200/90 hover:border-sky-400 hover:bg-sky-50/40 text-slate-800 hover:shadow-md'
+                      : 'bg-slate-950/70 border-slate-800/80 hover:border-sky-500/50 hover:bg-slate-950 text-slate-200 hover:shadow-lg hover:shadow-sky-500/5'
+                  }`}
+                >
                   <div
-                    className={`flex items-center space-x-4 mb-8 pb-5 border-b ${
-                      isLight ? 'border-slate-200' : 'border-slate-800/80'
+                    className={`p-1.5 rounded-xl transition-colors ${
+                      isLight
+                        ? 'bg-sky-50 text-sky-600 group-hover:bg-sky-100'
+                        : 'bg-sky-500/10 text-sky-400 group-hover:bg-sky-500/20'
                     }`}
                   >
-                    <div className="p-3 rounded-2xl bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
-                      <IconComponent className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h3 className={`text-lg sm:text-xl font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
-                        {group.category}
-                      </h3>
-                      <span className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
-                        {group.skills.length} core competencies
-                      </span>
-                    </div>
+                    <IconComponent className="w-4 h-4 shrink-0" />
                   </div>
-
-                  {/* Skills List with spacious breathing room */}
-                  <div className="space-y-4">
-                    {group.skills.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className={`group/item p-4 rounded-2xl border transition-colors ${
-                          isLight
-                            ? 'bg-slate-50/60 border-slate-200/60 hover:bg-slate-50 hover:border-slate-300'
-                            : 'bg-slate-950/40 border-slate-800/50 hover:bg-slate-950/70 hover:border-slate-700/60'
-                        }`}
-                      >
-                        <div className="flex items-center justify-between mb-1.5">
-                          <span
-                            className={`text-base font-semibold transition-colors ${
-                              isLight
-                                ? 'text-slate-900 group-hover/item:text-sky-600'
-                                : 'text-slate-100 group-hover/item:text-sky-300'
-                            }`}
-                          >
-                            {skill.name}
-                          </span>
-                          <span
-                            className={`text-[11px] code-font px-2.5 py-1 rounded-md border font-medium ${
-                              isLight
-                                ? 'bg-sky-50 text-sky-700 border-sky-200'
-                                : 'bg-slate-800 text-sky-300 border-slate-700/60'
-                            }`}
-                          >
-                            {skill.level}
-                          </span>
-                        </div>
-                        <p className={`text-xs sm:text-sm leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
-                          {skill.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
+                  <span className="text-xs sm:text-sm font-semibold tracking-tight whitespace-nowrap">
+                    {skill.name}
+                  </span>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
+          {/* Footer Count Hint */}
+          <div
+            className={`mt-8 pt-5 border-t text-center text-xs flex items-center justify-center space-x-2 ${
+              isLight ? 'border-slate-200 text-slate-500' : 'border-slate-800/80 text-slate-400'
+            }`}
+          >
+            <span>Showing {filteredSkills.length} of {skillsList.length} core engineering competencies</span>
+          </div>
+
         </div>
 
       </div>
