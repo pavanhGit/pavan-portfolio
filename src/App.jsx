@@ -4,8 +4,6 @@ import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import SkillsSection from './components/SkillsSection';
 import TimelineSection from './components/TimelineSection';
-import ProjectsSection from './components/ProjectsSection';
-import TestimonialsSection from './components/TestimonialsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
@@ -42,8 +40,6 @@ export default function App() {
         <AboutSection theme={theme} />
         <SkillsSection theme={theme} />
         <TimelineSection theme={theme} />
-        <ProjectsSection theme={theme} />
-        <TestimonialsSection theme={theme} />
         <ContactSection theme={theme} />
       </main>
 

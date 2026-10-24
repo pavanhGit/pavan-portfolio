@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, Mail, Phone } from 'lucide-react';
+import { Terminal, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, InstagramIcon } from './BrandIcons';
 import { personalInfo } from '../data/portfolioData';
 
@@ -8,46 +8,46 @@ export default function Footer({ theme }) {
 
   return (
     <footer
-      className={`py-12 border-t text-left transition-colors duration-500 ${
+      className={`py-16 md:py-20 border-t text-left transition-colors duration-500 ${
         isLight
-          ? 'bg-slate-100 border-slate-200 text-slate-600'
+          ? 'bg-slate-100/90 border-slate-200 text-slate-600'
           : 'bg-slate-950 border-slate-900 text-slate-400'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b ${
+          className={`grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 pb-14 border-b ${
             isLight ? 'border-slate-200' : 'border-slate-800/80'
           }`}
         >
           
           {/* Brand Col */}
-          <div className="md:col-span-6 space-y-3">
-            <div className="flex items-center space-x-2">
+          <div className="md:col-span-6 space-y-4">
+            <div className="flex items-center space-x-2.5">
               <div
-                className={`p-1.5 rounded ${
+                className={`p-2 rounded-xl ${
                   isLight
                     ? 'bg-sky-500/10 text-sky-600'
                     : 'bg-sky-500/20 text-sky-400'
                 }`}
               >
-                <Terminal className="w-4 h-4" />
+                <Terminal className="w-5 h-5" />
               </div>
-              <span className={`text-lg font-bold tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
+              <span className={`text-xl font-bold tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
                 {personalInfo.name}
               </span>
             </div>
-            <p className={`text-xs max-w-md leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <p className={`text-sm max-w-md leading-relaxed font-light ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
               Java Backend Developer & Software Engineer crafting scalable, resilient microservices, high-performance REST APIs, and distributed event-driven systems.
             </p>
           </div>
 
           {/* Quick Nav */}
-          <div className="md:col-span-3 space-y-2">
-            <h4 className={`text-xs font-mono uppercase font-bold ${isLight ? 'text-slate-900' : 'text-slate-300'}`}>
+          <div className="md:col-span-3 space-y-3">
+            <h4 className={`text-xs font-mono uppercase tracking-wider font-bold ${isLight ? 'text-slate-900' : 'text-slate-300'}`}>
               Navigation
             </h4>
-            <ul className="space-y-1.5 text-xs">
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <a href="#hero" className={`transition-colors ${isLight ? 'hover:text-sky-600' : 'hover:text-sky-400'}`}>
                   Home
@@ -64,13 +64,13 @@ export default function Footer({ theme }) {
                 </a>
               </li>
               <li>
-                <a href="#projects" className={`transition-colors ${isLight ? 'hover:text-sky-600' : 'hover:text-sky-400'}`}>
-                  Projects & Case Studies
+                <a href="#experience" className={`transition-colors ${isLight ? 'hover:text-sky-600' : 'hover:text-sky-400'}`}>
+                  Work Experience
                 </a>
               </li>
               <li>
                 <a href="#contact" className={`transition-colors ${isLight ? 'hover:text-sky-600' : 'hover:text-sky-400'}`}>
-                  Contact & Resume
+                  Contact & Hire
                 </a>
               </li>
             </ul>
@@ -78,15 +78,15 @@ export default function Footer({ theme }) {
 
           {/* Social Links */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className={`text-xs font-mono uppercase font-bold ${isLight ? 'text-slate-900' : 'text-slate-300'}`}>
+            <h4 className={`text-xs font-mono uppercase tracking-wider font-bold ${isLight ? 'text-slate-900' : 'text-slate-300'}`}>
               Connect & Brand
             </h4>
-            <div className="flex space-x-3">
+            <div className="flex space-x-3 pt-1">
               <a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-2 rounded-lg border transition-colors ${
+                className={`p-3 rounded-xl border transition-colors ${
                   isLight
                     ? 'bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-200 border-slate-300'
                     : 'bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border-slate-800'
@@ -99,7 +99,7 @@ export default function Footer({ theme }) {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-2 rounded-lg border transition-colors ${
+                className={`p-3 rounded-xl border transition-colors ${
                   isLight
                     ? 'bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-200 border-slate-300'
                     : 'bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border-slate-800'
@@ -112,7 +112,7 @@ export default function Footer({ theme }) {
                 href={personalInfo.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-2 rounded-lg border transition-colors ${
+                className={`p-3 rounded-xl border transition-colors ${
                   isLight
                     ? 'bg-white text-pink-600 hover:text-pink-700 hover:bg-slate-200 border-slate-300'
                     : 'bg-slate-900 text-pink-400 hover:text-pink-300 hover:bg-slate-800 border-slate-800'
@@ -123,7 +123,7 @@ export default function Footer({ theme }) {
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className={`p-2 rounded-lg border transition-colors ${
+                className={`p-3 rounded-xl border transition-colors ${
                   isLight
                     ? 'bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-200 border-slate-300'
                     : 'bg-slate-900 text-slate-400 hover:text-white hover:bg-slate-800 border-slate-800'
@@ -138,7 +138,7 @@ export default function Footer({ theme }) {
         </div>
 
         {/* Bottom Credits */}
-        <div className={`pt-8 flex flex-col sm:flex-row items-center justify-between text-xs space-y-4 sm:space-y-0 ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
+        <div className={`pt-10 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm space-y-4 sm:space-y-0 ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
           <p>© {new Date().getFullYear()} Pavan H. All rights reserved.</p>
 
           <div className="flex items-center space-x-4">

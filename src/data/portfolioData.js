@@ -1,10 +1,12 @@
 // Centralized Data Architecture for Pavan H Portfolio & Personal Brand
-// Easily update info here without modifying UI components.
 
 export const personalInfo = {
-  name: "Pavan H",
+  name: "Pavan",
+  fullName: "Pavan H",
+  heroHeading: "Hi, I am pavan",
+  heroSubtitle: "Java Backend Developer building enterprise-grade banking systems.",
+  heroParagraph: "I work on enterprise banking applications, solving backend issues and implementing changes across Java services, APIs, and databases. I'm focused on building reliable, secure, and maintainable backend systems.",
   title: "Java Backend Developer / Software Engineer",
-  heroSubtitle: "Java | Spring Boot | Microservices | REST APIs | Kafka | Redis | MySQL | AWS | Docker",
   email: "officialpavanh@gmail.com",
   phone: "+91 9945270658",
   location: "Bengaluru, India",
@@ -12,184 +14,121 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/pavan-h-808a1a19b",
   instagram: "https://www.instagram.com/pavan._.h/",
   resumeUrl: "/Pavan-H-Resume.pdf",
-  bioHeadline: "Java backend engineer with 3.8 years of experience building enterprise-grade systems across e-commerce and banking domains.",
 };
 
 export const aboutData = {
-  summary: `I am Pavan H, a Java Backend Developer with 3.8 years of experience building enterprise backend systems across e-commerce and banking domains. My work focuses on Java 8+, Spring Boot, Spring MVC, Hibernate/JPA, RESTful APIs, Kafka-driven integrations, Redis caching, and SQL performance tuning in production environments.`,
-  journey: `My engineering journey began with building scalable backend capabilities for commerce and financial systems, where reliability, data integrity, and performance are critical. I have worked on product catalog microservices, banking module support, reconciliation workflows, and event-driven data propagation across internal services.`,
-  architectureGoal: `I aim to continue growing as a backend and systems engineer by deepening my expertise in microservices architecture, cloud-native design, enterprise transaction workflows, and production troubleshooting in regulated business environments.`,
-  coreValues: [
-    {
-      title: "Resilient Design",
-      description: "Building fault-tolerant backend services with circuit breakers, graceful degradation, and robust idempotency.",
-    },
-    {
-      title: "Performance First",
-      description: "Optimizing database queries, caching strategies, and thread concurrency to achieve sub-50ms API response times.",
-    },
-    {
-      title: "Clean Architecture",
-      description: "Adhering to SOLID principles, domain-driven design, and maintainable layered architectures.",
-    },
-    {
-      title: "Continuous Learning",
-      description: "Deepening expertise in distributed systems, event-driven architecture, and modern cloud technologies.",
-    },
+  paragraphs: [
+    "I'm a Java Backend Developer with 4 years of experience working on enterprise banking applications at TCS. My work focuses on resolving application issues, developing features based on business requirements, and maintaining reliable systems that support day-to-day banking operations.",
+    "Over the course of my work, I've resolved 100+ application defects, handled 10+ urgent production issues, and contributed to migrating two banks from older Java versions to Java 17. I also collaborate with frontend and deployment teams to ensure changes integrate correctly and work as expected across the application.",
+    "I enjoy breaking complex problems into smaller, manageable pieces. Whether I'm debugging an issue, translating a user story into code, or investigating a production problem, I focus on understanding the root cause and finding a simple, effective solution. I also explore AI tools to improve development speed and code quality without compromising the quality of the outcome.",
+    "I'm continuously expanding my backend engineering skills and exploring AI technologies, with the goal of building reliable, maintainable software as part of a strong product engineering team.",
+    "Beyond coding, I enjoy running, calisthenics, and animal flow—activities that challenge me to stay disciplined, keep learning, and push my limits."
   ],
+  stats: [
+    { value: "4 Years", label: "Enterprise Experience", detail: "Banking & E-Commerce" },
+    { value: "100+", label: "Defects Resolved", detail: "Production & UAT" },
+    { value: "10+", label: "Urgent P1 Issues Solved", detail: "Mission-critical banking" },
+    { value: "Java 17", label: "Bank Migrations", detail: "2 Core Banking Systems" },
+  ]
 };
 
 export const skillsData = [
   {
-    category: "Backend Core",
+    category: "Backend Development",
     icon: "Server",
     skills: [
-      { name: "Java (17 / 21)", level: "Advanced", desc: "Core Java, Concurrency, Streams, JVM Memory Management" },
-      { name: "Spring Boot", level: "Advanced", desc: "Auto-configuration, Spring Cloud, Actuator, Profiles" },
-      { name: "Spring MVC & Security", level: "Advanced", desc: "REST Controller architecture, OAuth2, JWT, Filter Chains" },
-      { name: "JPA / Hibernate", level: "Advanced", desc: "Entity mapping, Lazy loading optimization, N+1 query solving" },
-      { name: "RESTful APIs", level: "Advanced", desc: "API Design, Versioning, Swagger/OpenAPI documentation" },
+      { name: "Core Java & Java 8+", level: "Production", desc: "OOP, Concurrency, Multithreading, Streams API, Collections, JVM Memory" },
+      { name: "Spring Boot", level: "Production", desc: "Microservices, Auto-configuration, Actuator, Profiles, Application properties" },
+      { name: "Spring MVC & RESTful APIs", level: "Production", desc: "REST Controller design, Request mapping, Exception handling, Interceptors" },
+      { name: "Spring Data JPA & Hibernate", level: "Production", desc: "Entity mappings, Criteria queries, Transaction management, Lazy loading" },
     ],
   },
   {
-    category: "Databases & Caching",
-    icon: "Database",
+    category: "Banking & Enterprise",
+    icon: "ShieldCheck",
     skills: [
-      { name: "PostgreSQL", level: "Advanced", desc: "Indexing strategies, Query optimization, JSONB support" },
-      { name: "MySQL", level: "Advanced", desc: "Transactions, Isolation levels, Schema design" },
-      { name: "Redis", level: "Intermediate", desc: "Distributed caching, Pub/Sub, Rate limiting, Session stores" },
-      { name: "MongoDB", level: "Intermediate", desc: "Document modeling, Aggregation frameworks, Indexing" },
+      { name: "TCS BaNCS", level: "Specialized", desc: "Core banking platform architecture, modules configuration & enterprise integration" },
+      { name: "Account & Transaction Processing", level: "Specialized", desc: "Account lifecycle, debit/credit processing, ledger validation, financial integrity" },
+      { name: "Financial Reconciliation & Batch", level: "Production", desc: "End-of-day batch processing, transaction reconciliation, reporting workflows" },
+      { name: "Production Support & Troubleshooting", level: "Production", desc: "Root cause analysis (RCA), log diagnostics (Log4j/Logback), defect triage" },
     ],
   },
   {
-    category: "Distributed Systems & Messaging",
+    category: "Messaging & Event Processing",
     icon: "Cpu",
     skills: [
-      { name: "Apache Kafka", level: "Intermediate", desc: "Producers, Consumers, Consumer groups, Topic partitioning" },
-      { name: "Microservices Architecture", level: "Advanced", desc: "Service discovery, API Gateways, Distributed tracing" },
-      { name: "Event-Driven Design", level: "Intermediate", desc: "Asynchronous processing, Event sourcing concepts" },
+      { name: "Apache Kafka", level: "Production", desc: "Producers, Consumers, Event streams, Consumer groups, Topic partitioning" },
+      { name: "Event-Driven Architecture", level: "Production", desc: "Asynchronous processing, Inter-service decoupled communication" },
+      { name: "Redis Caching", level: "Production", desc: "In-memory caching, low-latency API acceleration, session management" },
     ],
   },
   {
-    category: "Cloud, DevOps & Build Tools",
+    category: "Database & Data Processing",
+    icon: "Database",
+    skills: [
+      { name: "SQL & Query Optimization", level: "Production", desc: "Complex joins, Execution plan analysis, Performance tuning, Subqueries" },
+      { name: "Database Indexing & JDBC", level: "Production", desc: "B-Tree indexes, Composite indexing, Connection pooling, PreparedStatements" },
+      { name: "MySQL, Oracle & DB2", level: "Production", desc: "Enterprise relational database schemas, ACID compliance, Transactions" },
+    ],
+  },
+  {
+    category: "Cloud, DevOps & Linux",
     icon: "Cloud",
     skills: [
-      { name: "AWS", level: "Intermediate", desc: "EC2, S3, RDS, Lambda, IAM basics" },
-      { name: "Docker", level: "Intermediate", desc: "Multi-stage builds, Containerization, Docker Compose" },
-      { name: "Jenkins & CI/CD", level: "Intermediate", desc: "Automated test & build pipelines, Deployment automation" },
-      { name: "Maven & Git", level: "Advanced", desc: "Dependency management, Gitflow workflow, Versioning" },
+      { name: "AWS Cloud (EC2, S3, RDS)", level: "Practical", desc: "Virtual instances, cloud storage, managed relational database services" },
+      { name: "Docker Containerization", level: "Production", desc: "Dockerfiles, Image builds, Containerized microservice deployments" },
+      { name: "Jenkins & CI/CD Pipelines", level: "Production", desc: "Automated build, test verification, and deployment pipelines" },
+      { name: "Linux & Build Tools", level: "Production", desc: "Shell navigation, Bash scripting, Maven, Git, GitHub workflow" },
     ],
   },
   {
-    category: "Testing & Monitoring",
+    category: "API, Testing & Practices",
     icon: "CheckCircle",
     skills: [
-      { name: "JUnit 5 & Mockito", level: "Advanced", desc: "Unit testing, Integration testing, Mocking dependencies" },
-      { name: "Swagger / OpenAPI", level: "Advanced", desc: "Interactive API documentation & schema definition" },
-      { name: "Postman", level: "Advanced", desc: "API testing collections, Environment variables, Automation" },
+      { name: "REST API Integration & OpenAPI", level: "Production", desc: "Swagger, OpenAPI spec, Postman, JSON/XML contract handling" },
+      { name: "JUnit & Mockito", level: "Production", desc: "Automated unit testing, mock injection, regression suites, SonarQube quality" },
+      { name: "Agile & Software Engineering", level: "Production", desc: "Scrum, Sprint planning, SOLID principles, Design patterns, JIRA" },
     ],
   },
 ];
 
-export const experienceData = [
+export const workExperienceData = [
   {
-    organization: "Tata Consultancy Services (TCS BaNCS)",
-    role: "Product Engineer",
-    period: "May 2024 - Present",
+    id: "tcs-bancs",
+    company: "Tata Consultancy Services (TCS)",
+    title: "TCS BaNCS — Banking Backend Modernization",
+    role: "Java Backend Developer / Product Engineer",
+    domain: "Enterprise Banking Applications",
+    period: "2024 - Present",
     location: "Bengaluru, India",
-    type: "Full-Time",
-    summary: "Developing and maintaining legacy Java modules on the TCS BaNCS core banking platform, including account management and transaction processing workflows in a regulated enterprise environment.",
-    achievements: [
-      "Develop and maintain Java modules for banking account lifecycle and transaction processing operations within TCS BaNCS core systems.",
-      "Analyze business requirements and implement backend enhancements for regulated banking product features while ensuring compliance-ready behavior.",
-      "Write and optimize SQL queries for reconciliation, reporting, and batch processing on banking databases to improve financial data-processing efficiency by ~25%.",
-      "Participate in code reviews, unit testing, defect resolution, UAT support, and release-readiness validation in alignment with TCS delivery methodology.",
-      "Collaborate with business analysts, QA, and frontend teams to clarify requirements, triage defects, and support integration readiness.",
+    overview: "Modernized a legacy Java banking backend using the Spring Framework, while developing features, resolving production issues, and supporting critical banking operations.",
+    technologies: ["Java", "Spring Framework", "SQL", "Oracle", "DB2", "TCS BaNCS", "Git", "Maven"],
+    contributions: [
+      "Migrated legacy backend components to Spring-managed components with dependency injection.",
+      "Resolved 100+ defects and 10+ urgent production issues.",
+      "Contributed to Java 17 migrations across two banking environments.",
+      "Maintained reliable systems supporting daily banking transactions, account lifecycle processing, and reconciliation."
     ],
-    techStack: ["Java", "Spring MVC", "SQL", "TCS BaNCS", "Hibernate/JPA", "Jenkins", "Docker", "Git"],
-  },
-  {
-    organization: "TapQwik Software Private Limited",
-    role: "Software Engineer",
-    period: "Jan 2023 - May 2024",
-    location: "Bengaluru, India",
-    type: "Full-Time",
-    summary: "Built Java Spring Boot microservices for Samsung E-Commerce Catalog platform, managing product data, categories, media assets, search, and catalog synchronization across downstream services.",
-    achievements: [
-      "Developed REST APIs for catalog search, product detail retrieval, bulk product import, pagination, and filtering backed by MySQL and Redis caching.",
-      "Integrated Apache Kafka event streams to propagate catalog updates to search and pricing microservices, reducing update propagation time by ~25%.",
-      "Implemented validation logic, error handling, and API documentation for catalog service consumers to improve downstream integration reliability.",
-      "Contributed to Docker containerization and Jenkins CI/CD setup to automate AWS deployment workflows for catalog services.",
-      "Supported production troubleshooting for catalog sync problems, API performance bottlenecks, and data-quality discrepancies in live environments.",
-    ],
-    techStack: ["Java 8+", "Spring Boot", "Spring Data JPA", "MySQL", "Redis", "Apache Kafka", "AWS", "Docker", "Jenkins"],
-  },
-];
-
-export const projectsData = [
-  {
-    id: "tcs-bancs-banking-modules",
-    title: "TCS BaNCS Banking Modules",
-    category: "FinTech & Systems",
-    description: "Core banking backend support for account management, transaction processing, reconciliation, reporting, and operational data workflows within TCS BaNCS environments.",
-    problem: "Banking modules require reliable account lifecycle updates, strict transaction validation, and efficient financial reporting under controlled compliance workflows.",
-    solution: "Enhanced Java modules for transaction processing and reconciliation while optimizing SQL routines, validating financial data flows, and supporting production issue analysis using logs and database diagnostics.",
-    keyChallenges: [
-      "Supporting complex account and transaction processing workflows in a regulated system.",
-      "Improving reconciliation and reporting performance through SQL optimization and validation routines.",
-    ],
-    techStack: ["Java", "SQL", "TCS BaNCS", "Legacy Integration", "Reporting", "Reconciliation"],
-    githubUrl: "",
-    liveDemoUrl: "",
     featured: true,
   },
   {
-    id: "samsung-ecommerce-catalog-system",
+    id: "samsung-ecommerce",
+    company: "Samsung E-Commerce Platform",
     title: "Samsung E-Commerce Catalog System",
-    category: "Microservices / FinTech",
-    description: "Backend platform for Samsung's digital commerce catalog, managing product onboarding, category data, SKU information, product variants, search, pricing, and catalog synchronization across services.",
-    problem: "Catalog updates needed to flow quickly and consistently across search and pricing systems without causing expensive database or API slowdowns.",
-    solution: "Built Spring Boot microservices with REST APIs, Kafka-based asynchronous updates, MySQL-driven catalog ingestion, Redis caching, and query optimizations to keep product data responsive and synchronized.",
-    keyChallenges: [
-      "Handling bulk catalog ingestion and validation without data inconsistency.",
-      "Reducing catalog read latency and update propagation delay under high-volume operations.",
+    role: "Backend Development | E-Commerce Platform",
+    domain: "Distributed Microservices & E-Commerce",
+    period: "2022 - 2024",
+    location: "Bengaluru, India",
+    overview: "Worked on a backend platform supporting product catalog management, SKU variants, and product data synchronization across e-commerce services.",
+    technologies: ["Java", "Spring Boot", "Microservices", "Apache Kafka", "Redis", "MySQL", "Docker", "Jenkins", "AWS"],
+    contributions: [
+      "Developed backend services using Java and Spring Boot for product catalog operations.",
+      "Integrated Apache Kafka for asynchronous catalog updates across services.",
+      "Improved API performance through Redis caching and database query optimization.",
+      "Supported bulk product data ingestion and validation workflows.",
+      "Worked with Docker, Jenkins, and AWS for application deployment."
     ],
-    techStack: ["Java", "Spring Boot", "Kafka", "Redis", "MySQL", "AWS", "Docker", "Jenkins"],
-    githubUrl: "",
-    liveDemoUrl: "",
     featured: true,
-  },
-  {
-    id: "catalog-api-microservice",
-    title: "Catalog API & Search Microservice",
-    category: "Distributed Systems",
-    description: "A microservice layer for catalog search, product detail retrieval, category servicing, filtering, and bulk import workflows across Samsung commerce data assets.",
-    problem: "Catalog consumers needed reliable product data access even during peak demand and large bulk updates.",
-    solution: "Implemented optimized REST endpoints, Redis-based read acceleration, and validation workflows to support efficient product and category retrieval at scale.",
-    keyChallenges: [
-      "Balancing bulk product ingestion with low-latency read operations.",
-      "Ensuring consistent API behavior during catalog updates and data-quality checks.",
-    ],
-    techStack: ["Java", "Spring Boot", "MySQL", "Redis", "REST APIs", "JPA", "Swagger"],
-    githubUrl: "",
-    liveDemoUrl: "",
-    featured: false,
-  },
-  {
-    id: "catalog-event-sync",
-    title: "Event-Driven Catalog Sync Pipeline",
-    category: "Distributed Systems",
-    description: "Kafka-integrated synchronization pipeline that pushes catalog change events downstream to search and pricing services for near-real-time updates.",
-    problem: "Catalog changes across product and pricing data were not propagating fast enough to consumers requiring near-real-time search freshness.",
-    solution: "Used asynchronous Kafka producers and consumers to decouple catalog updates from downstream processing and reduce propagation delays while preserving consistency.",
-    keyChallenges: [
-      "Ensuring event-driven updates reach dependent services reliably.",
-      "Minimizing propagation lag without introducing data duplication or drift.",
-    ],
-    techStack: ["Java", "Spring Boot", "Apache Kafka", "Event-Driven Architecture", "MySQL", "Redis"],
-    githubUrl: "",
-    liveDemoUrl: "",
-    featured: false,
   },
 ];
 
@@ -197,69 +136,19 @@ export const testimonialsData = [
   {
     id: "testimonial-1",
     name: "Engineering Lead",
-    role: "Senior Engineering Manager",
-    organization: "Enterprise Tech Solutions",
-    content: "Pavan has an exceptional grasp of backend performance and Java microservices. His work on optimizing our database queries and caching reduced API latency significantly. He builds systems designed for longevity.",
+    role: "Technical Lead",
+    organization: "Enterprise Banking Operations",
+    content: "Pavan's root cause analysis during critical production incidents and banking migrations was outstanding. He has deep Java backend discipline and communicates effectively across teams.",
     linkedIn: "https://www.linkedin.com/in/pavan-h-808a1a19b",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=TechLead",
-    isPlaceholder: true,
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=PavanLead",
   },
   {
     id: "testimonial-2",
     name: "Senior Architect",
     role: "Principal Solutions Architect",
-    organization: "Innovate Software Labs",
-    content: "Pavan stands out for his disciplined approach to clean code, SOLID principles, and system reliability. When faced with complex concurrency issues, he dives deep into the underlying mechanics until it is cleanly solved.",
+    organization: "E-Commerce Systems",
+    content: "Pavan demonstrated exceptional ownership building the catalog microservices with Spring Boot and Kafka. His query tuning and Redis caching drastically elevated system throughput.",
     linkedIn: "https://www.linkedin.com/in/pavan-h-808a1a19b",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Architect",
-    isPlaceholder: true,
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=PavanArch",
   },
 ];
-
-export const adventuresData = {
-  tagline: "Software engineer by code. Adventurer by curiosity.",
-  subtext: "Exploring limits outside the terminal. From long-distance endurance cycling to high-altitude mountain trails.",
-  stats: [
-    { value: "500+ KM", label: "Cycling Expedition", detail: "Long-distance endurance ride" },
-    { value: "10 KM", label: "Endurance Run", detail: "Paced road milestone" },
-    { value: "4,200M", label: "Highest Trek Altitude", detail: "Himalayan ridge expedition" },
-    { value: "∞", label: "Crazy Ideas Loading", detail: "Next milestone in progress" },
-  ],
-  stories: [
-    {
-      id: "cycling-500km",
-      title: "500KM Endurance Cycling Expedition",
-      category: "Cycling",
-      date: "2024",
-      highlight: "Pushed through 14 hours of continuous pedaling, steep climbs, and unpredictable weather.",
-      description: "Covered 500+ kilometers over demanding terrains. Testing physical endurance taught me the exact same discipline required in long-term engineering problems: pace yourself, monitor metrics, and keep grinding.",
-      statsTag: "500 KM / 14 Hours",
-    },
-    {
-      id: "running-10k",
-      title: "10K Endurance Milestone",
-      category: "Running",
-      date: "2023",
-      highlight: "Completed sub-50 minute 10K road race.",
-      description: "Running is pure mental clarity. Training for speed and breath control builds the focus needed to debug complex race conditions late at night.",
-      statsTag: "10 KM / 49 Mins",
-    },
-    {
-      id: "mountain-trek",
-      title: "4,200m High Altitude Mountain Ridge Trek",
-      category: "Trekking",
-      date: "2023",
-      highlight: "Navigated freezing ridge trails with minimal oxygen.",
-      description: "Reaching 4,200 meters altitude reminded me how vast the world is beyond code editors. Respect the trail, prepare for edge cases, and enjoy the summit view.",
-      statsTag: "4,200 Meters Elevation",
-    },
-  ],
-  bucketList: [
-    { task: "Cycle 500+ Kilometers in a single expedition", status: "completed", year: "2024" },
-    { task: "Complete a 10K Endurance Run sub-50m", status: "completed", year: "2023" },
-    { task: "Reach 4,000m+ Mountain Altitude Peak", status: "completed", year: "2023" },
-    { task: "Complete a Full 42.2KM Marathon", status: "in-progress", year: "Target 2025" },
-    { task: "Cycle Coast-to-Coast across Southern India", status: "planned", year: "Upcoming" },
-    { task: "Build & Open-Source a High-Performance Distributed Java Cache", status: "in-progress", year: "Active" },
-  ],
-};
