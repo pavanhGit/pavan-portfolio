@@ -1,7 +1,0 @@
-# Robots.txt for Pavan H Portfolio
-User-agent: *
-Allow: /
-
-# Host & Sitemap
-Host: https://pavan-h.dev
-Sitemap: https://pavan-h.dev/sitemap.xml
